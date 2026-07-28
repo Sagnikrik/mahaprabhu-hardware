@@ -1,70 +1,71 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
 
-<title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
 
-<link rel="stylesheet" href="admin.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
 </head>
 
 <body>
 
-<header>
+    <header class="topbar">
 
-<h1>Mahaprabhu Hardware Admin</h1>
+        <h1>
+            <i class="fa-solid fa-user-shield"></i>
+            Mahaprabhu Hardware Admin
+        </h1>
 
-<a href="#" id="logoutBtn" class="logout-btn">
+        <a href="#" id="logoutBtn" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
 
-Logout
+    </header>
 
-</a>
+    <div class="container">
 
-</header>
+        <h2>Admin Dashboard</h2>
 
-<div class="dashboard">
+        <div class="services-grid">
 
-<div class="card">
+            <div class="service-card">
 
-<h2>Upload Bill</h2>
+                <span>📄</span>
 
-<p>
+                <h3>Register Bill</h3>
 
-Upload customer PDF bills.
+                <p>Upload new customer bills.</p>
 
-</p>
+                <a href="uploadbill.html">
+                    Open
+                </a>
 
-<a href="uploadbill.html">
+            </div>
 
-Open
+            <div class="service-card">
 
-</a>
+                <span>📋</span>
 
-</div>
+                <h3>Manage Bills</h3>
 
-<div class="card">
+                <p>View, Edit & Delete Bills.</p>
 
-<h2>Manage Bills</h2>
+                <a href="managebills.html">
+                    Open
+                </a>
 
-<p>
+            </div>
 
-View uploaded bills.
+        </div>
 
-</p>
+    </div>
 
-<a href="#">
-
-Coming Soon
-
-</a>
-
-</div>
-
-</div>
-
-<script type="module" src="admin.js"></script>
+    <script type="module" src="admin.js"></script>
 
 </body>
 

@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("frontbg.jpeg");
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+.container{
+
+    width:450px;
+
+    background:rgba(255,255,255,.96);
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+
+    text-align:center;
+
+}
+
+.container h2{
+
+    color:#1565c0;
+
+    margin-bottom:25px;
+
+    font-size:30px;
+
+}
+
+input[type=text]{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:18px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+input[type=text]:focus{
+
+    border-color:#1565c0;
+
+    box-shadow:0 0 8px rgba(21,101,192,.25);
+
+}
+
+.file-upload{
+
+    width:100%;
+
+    border:2px dashed #1565c0;
+
+    border-radius:10px;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    background:#f7fbff;
+
+}
+
+.file-upload:hover{
+
+    background:#eef6ff;
+
+}
+
+.file-upload input{
+
+    display:none;
+
+}
+
+.file-upload label{
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    color:#1565c0;
+
+    font-weight:600;
+
+}
+
+#fileName{
+
+    display:block;
+
+    margin-top:12px;
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#1565c0;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#0d47a1;
+
+}
+
+button:disabled{
+
+    background:#9e9e9e;
+
+    cursor:not-allowed;
+
+}
+
+#status{
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:green;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:10px;
+
+    background:#ddd;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-top:20px;
+
+    display:none;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    width:0%;
+
+    background:#1565c0;
+
+    transition:.4s;
+
+}
+
+@media(max-width:500px){
+
+.container{
+
+    width:92%;
+
+    padding:25px;
+
+}
+
+.container h2{
+
+    font-size:25px;
+
+}
+
+}

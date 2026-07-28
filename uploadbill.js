@@ -1,59 +1,79 @@
+import { supabase } from "./supabase.js";
 import { db } from "./firebase.js";
 
 import {
+    doc,
+    setDoc,
+    getDoc
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-doc,
+const uploadBtn = document.getElementById("uploadBtn");
+const status = document.getElementById("status");
 
-setDoc,
+uploadBtn.addEventListener("click", async () => {
 
-getDoc
+    const billNumber = document.getElementById("billNumber").value.trim();
+    const file = document.getElementById("billPdf").files[0];
+    const billRef = doc(db, "Bills", billNumber);
+const billSnap = await getDoc(billRef);
 
+if (billSnap.exists()) {
+    status.innerHTML = "❌ Bill Number already exists!";
+    status.style.color = "red";
+    return;
 }
 
-from
+    if (!billNumber) {
+        status.innerHTML = "Please enter bill number.";
+        return;
+    }
 
-"https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+    if (!file) {
+        status.innerHTML = "Please select a PDF.";
+        return;
+    }
 
-const saveBtn=document.getElementById("saveBtn");
+    status.innerHTML = "Uploading...";
+    status.style.color="Blue";
+    const fileName = billNumber + ".pdf";
 
-saveBtn.addEventListener("click",async()=>{
+    const { error } = await supabase.storage
+        .from("Bills")
+        .upload(fileName, file, {
+            upsert: true
+        });
 
-const billNumber=document
-.getElementById("billNumber")
-.value
-.trim();
+    if (error) {
+        status.innerHTML = error.message;
+        return;
+    }
 
-const status=document
-.getElementById("status");
+    const { data } = supabase.storage
+        .from("Bills")
+        .getPublicUrl(fileName);
 
-if(billNumber==""){
+    await setDoc(doc(db, "Bills", billNumber), {
 
-status.innerHTML="Enter Bill Number";
+        billNumber: billNumber,
 
-return;
+        pdfUrl: data.publicUrl
 
-}
+    });
 
-const billRef=doc(db,"Bills",billNumber);
-
-const billSnap=await getDoc(billRef);
-
-if(billSnap.exists()){
-
-status.innerHTML="Bill already exists";
-
-return;
-
-}
-
-await setDoc(billRef,{
-
-billNumber:billNumber,
-
-pdfPath:"pdfs/"+billNumber+".pdf"
-
+    status.innerHTML = "✅ Bill Uploaded Successfully";
+    status.style.color = "Green";
+    setTimeout(() => {
+    window.location.href = "admin.html"; // Change to your previous page name
+}, 2000);
 });
+console.log(supabase);
+const billPdf = document.getElementById("billPdf");
+const fileNameText = document.getElementById("fileName");
 
-status.innerHTML="Bill Registered Successfully";
-
+billPdf.addEventListener("change", () => {
+    if (billPdf.files.length > 0) {
+        fileNameText.textContent = billPdf.files[0].name;
+    } else {
+        fileNameText.textContent = "No file selected";
+    }
 });

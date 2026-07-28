@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Login</title>
 
-<link rel="stylesheet" href="login.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+
+    <link rel="stylesheet" href="adminlogin.css">
 </head>
 
 <body>
 
-<div class="login-box">
+    <div class="login-box">
 
-<h1>Admin Login</h1>
+        <h1>Admin Login</h1>
 
-<form id="adminLoginForm">
+        <div class="login-box">
 
-<input
-type="email"
-id="email"
-placeholder="Admin Email"
-required>
+            <div class="admin-icon">🔐</div>
 
-<input
-type="password"
-id="password"
-placeholder="Password"
-required>
+            <h1>Admin Login</h1>
 
-<button type="submit">
-Login
-</button>
+            <form id="adminLoginForm">
 
-</form>
+                <input type="email" id="email" placeholder="Admin Email" required>
 
-</div>
+                <div class="password-box">
 
-<script type="module" src="adminLogin.js"></script>
+                    <input type="password" id="password" placeholder="Password" required>
+
+                    <span id="togglePassword">😀</span>
+
+                </div>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+
+        <script type="module" src="adminLogin.js"></script>
 
 </body>
+
 </html>

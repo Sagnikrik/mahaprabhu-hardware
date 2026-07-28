@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Bills</title>
+
+    <link rel="stylesheet" href="managebills.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Manage Customer Bills</h1>
+
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+
+            <input type="text" id="searchBill" placeholder="Enter Bill Number">
+
+            <button id="searchBtn" class="search-btn">
+                Search
+            </button>
+
+            <button id="resetBtn" class="reset-btn">
+                Reset
+            </button>
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>#</th>
+                        <th>Bill Number</th>
+                        <th>PDF</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="billTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="managebills.js"></script>
+
+</body>
+
+</html>

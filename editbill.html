@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Bill</title>
+
+    <link rel="stylesheet" href="editbill.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Edit Customer Bill</h1>
+
+        <form id="editForm">
+
+            <!-- Bill Number -->
+
+            <div class="input-group">
+
+                <label>Bill Number</label>
+
+                <input
+                    type="text"
+                    id="billNumber"
+                    readonly>
+
+            </div>
+
+            <!-- Current PDF -->
+
+            <div class="input-group">
+
+                <label>Current PDF</label>
+
+                <a
+                    href="#"
+                    id="currentPdf"
+                    target="_blank"
+                    class="pdf-btn">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    View Current PDF
+
+                </a>
+
+            </div>
+
+            <!-- Upload New PDF -->
+
+            <div class="input-group">
+
+                <label>Select New PDF</label>
+
+                <input
+                    type="file"
+                    id="pdfFile"
+                    accept=".pdf"
+                    required>
+
+            </div>
+
+            <!-- Update Button -->
+
+            <button
+                type="submit"
+                class="update-btn">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Update Bill
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <script type="module" src="editbill.js"></script>
+
+</body>
+
+</html>

@@ -21,13 +21,13 @@ form.addEventListener("submit", async (e) => {
             password
         );
         const loggedInEmail = userCredential.user.email.trim().toLowerCase();
-        if (loggedInEmail !== "admin@mph.com") {
-            alert("Access Denied\nLogged in as: " + loggedInEmail);
-            await auth.signOut();
-            return;
-        }
+      if (userCredential.user.email != "admin@mph.com") {
+    alert("Access Denied");
+    await auth.signOut();
+    return;
+}
 
-        window.location.href = "admin.html";
+window.location.href = "admin.html";
 
     } catch (error) {
 

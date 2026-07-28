@@ -1,44 +1,45 @@
 import { db } from "./firebase.js";
 
 import {
-
 doc,
-
 getDoc
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+console.log("searchBill.js loaded");
+const btn=document.getElementById("searchBtn");
+const status=document.getElementById("status");
 
-}
+btn.addEventListener("click",async()=>{
 
-from
+const billNumber=document.getElementById("billNumber").value.trim();
+btn.addEventListener("click", async () => {
+    console.log("Button clicked");
 
-"https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+    // existing code...
+});
 
-const searchBtn=document
-.getElementById("searchBtn");
+if(!billNumber){
 
-searchBtn.addEventListener("click",async()=>{
-
-const billNumber=document
-.getElementById("billNumber")
-.value
-.trim();
-
-const result=document
-.getElementById("result");
-
-const billRef=doc(db,"Bills",billNumber);
-
-const billSnap=await getDoc(billRef);
-
-if(!billSnap.exists()){
-
-result.innerHTML="Bill Not Found";
+status.innerHTML="Please enter bill number.";
 
 return;
 
 }
 
-const data=billSnap.data();
+const ref=doc(db,"Bills",billNumber);
 
-window.open(data.pdfPath,"_blank");
+const snap=await getDoc(ref);
+
+if(!snap.exists()){
+
+status.innerHTML="Bill Not Found";
+status.style.color="Red"
+
+return;
+
+}
+
+const data=snap.data();
+
+window.open(data.pdfUrl,"_blank");
 
 });

@@ -1,14 +1,66 @@
-<h2>Register Bill</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<input
-type="text"
-id="billNumber"
-placeholder="Bill Number">
+<head>
 
-<button id="saveBtn">
+    <meta charset="UTF-8">
 
-Save Bill
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</button>
+    <title>Upload Bill</title>
 
-<p id="status"></p>
+    <link rel="stylesheet" href="uploadbill.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Upload Customer Bill</h2>
+
+    <input
+        type="text"
+        id="billNumber"
+        placeholder="Enter Bill Number">
+
+    <div class="file-upload">
+
+        <label for="billPdf">
+            📄 Choose Bill PDF
+        </label>
+
+        <input
+            type="file"
+            id="billPdf"
+            accept=".pdf">
+
+        <span id="fileName">
+            No file selected
+        </span>
+
+    </div>
+
+    <div class="progress">
+
+        <div class="progress-bar" id="progressBar"></div>
+
+    </div>
+
+    <button id="uploadBtn">
+
+        Upload Bill
+
+    </button>
+
+    <p id="status"></p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script type="module" src="uploadbill.js"></script>
+
+</body>
+
+</html>

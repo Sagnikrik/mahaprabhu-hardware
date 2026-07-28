@@ -1,55 +1,34 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Search Bill</title>
 
-<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="uploadbill.css">
 
 </head>
 
 <body>
 
-<header>
+<div class="container">
 
-<h1>Search Bill</h1>
-
-</header>
-
-<div class="dashboard">
-
-<div class="card">
+<h2>Customer Bill Search</h2>
 
 <input
-
 type="text"
-
 id="billNumber"
-
-placeholder="Bill Number">
-
-<br><br>
+placeholder="Enter Bill Number">
 
 <button id="searchBtn">
-
-Search
-
+Search Bill
 </button>
 
-<p id="result"></p>
+<p id="status"></p>
 
 </div>
 
-</div>
-
-<script type="module"
-
-src="searchBill.js">
-
-</script>
+<script type="module" src="billsearch.js"></script>
 
 </body>
-
 </html>
