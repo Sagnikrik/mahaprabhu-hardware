@@ -21,7 +21,6 @@ form.addEventListener("submit", async (e) => {
             password
         );
         const loggedInEmail = userCredential.user.email.trim().toLowerCase();
-        alert(userCredential.user.email);
         if (loggedInEmail !== "admin@mph.com") {
             alert("Access Denied\nLogged in as: " + loggedInEmail);
             await auth.signOut();
